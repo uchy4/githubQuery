@@ -1,0 +1,13 @@
+<div>
+     <div ng-controller="MainController" class="container">
+          <h1>{{message}}</h1>
+          <form name="searchUser" ng-submit="search()">
+               <div class="input-group">
+                    <a class="input-group-addon btn btn-secondary" type="submit">Search</a>
+                    <input class="form-control" type="search" required="" placeholder="github user" ng-model="username" />
+               </div>
+          </form>
+          <h1 class="text-center display-1" ng-show="countdown">{{countdown}}</h1>
+          <div ng-include="'user.html'" ng-show="user" id="userDetails"></div>
+     </div>
+</div>

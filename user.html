@@ -1,0 +1,39 @@
+<div class="container">
+     <ul class="list-group">
+          <li class="list-group-item">
+               <div class="row">
+                    <div class="col-sm-4" ng-show="user.avatar_url">
+                         <img ng-src="{{user.avatar_url}}" class="mx-auto d-block img-fluid" />
+                    </div>
+                    <div class="col-sm-8">
+                         <ul class="list-group">
+                              <li class="list-group-item" ng-show="user.name">{{user.name}}</li>
+                              <li class="list-group-item" ng-show="user.bio">{{user.bio}}</li>
+                         </ul>
+                    </div>
+               </div>
+          </li>
+          <li class="list-group-item" ng-show="user.repos_url" id="repos">
+               <h4 class="text-center">Repositories</h4>
+               <table class="table">
+                    <thead>
+                         <tr>
+                              <th class="text-left">Name</th>
+                              <th class="text-left">Language</th>
+                              <th class="text-left">Rating</th>
+                              <th class="text-left">Size</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                         <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
+                              <td>{{repo.name}}</td>
+                              <td>{{repo.language}}</td>
+                              <td>{{repo.stargazers_count}}</td>
+                              <td>{{repo.size}}</td>
+                         </tr>
+                    </tbody>
+               </table>
+          </li>
+     </ul>
+     <a class="btn btn-secondary btn-block" href="#/main">Back to Main</a>
+</div>
